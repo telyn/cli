@@ -223,11 +223,9 @@ func (c Command) startApp(ctx *Context) error {
 		app.HelpName = app.Name
 	}
 
-	if c.Description != "" {
-		app.Usage = c.Description
-	} else {
-		app.Usage = c.Usage
-	}
+	app.Usage = c.Usage
+	app.UsageText = c.UsageText
+	app.Description = c.Description
 
 	// set CommandNotFound
 	app.CommandNotFound = ctx.App.CommandNotFound
